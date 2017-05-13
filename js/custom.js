@@ -44,17 +44,18 @@ $(function() {
     $('.js-show-modal').on('click', function (e) {
         e.preventDefault();
         var currentModal = $(this).attr('href');
-        $('body').addClass('open-modal');
-        $(currentModal + ', #js-overlay').fadeIn(500);
+        $('body').append('<div class="overlay" id="js-overlay"></div>').addClass('open-modal');
+        $(currentModal).fadeIn(500);
 
        $('.js-modal-close, #js-overlay').on('click', function (e) {
             e.preventDefault();
             $('body').removeClass('open-modal');
-            $(currentModal + ', #js-overlay').fadeOut(500);
+            $(currentModal).fadeOut(500);
+            $('#js-overlay').remove();
         });
     });
 
-    // FAQ Accordion
+    /*// FAQ Accordion #1
     $(".js-faq-title").on("click", function(e) {
 
         e.preventDefault();
@@ -68,5 +69,33 @@ $(function() {
         $this.toggleClass("active");
         $this.next().slideToggle();
 
+    });*/
+    // FAQ Accordion #2
+    $(".js-faq-title").on("click", function(e) {
+
+        e.preventDefault();
+        var $this = $(this);
+        var answerId = $this.attr('href');
+        if( !$this.hasClass("active") ) {
+            $(".js-faq-content").slideUp();
+            $(".js-faq-title").removeClass("active");
+        }
+
+        $this.toggleClass("active");
+        $(answerId).slideToggle();
+    });
+
+    // Popup Ticks
+    $(".js-popup-hover").hover(function() {
+
+        var $this = $(this),
+            popupId = $this.attr("href");
+
+        $(popupId).fadeIn();
+
+
+    }, function() {
+
+        $(".js-popup").fadeOut();
     });
 });

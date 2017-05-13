@@ -19,6 +19,7 @@ Table of Content
 13. Footer
 14. Modals
 15. FAQ
+16. Popup
 ===========================*/
 
 
@@ -99,10 +100,6 @@ address {
 
 .header {
     background: @theme_color2 url("@{i}header.jpg") center top no-repeat;
-
-    &.nav-fixed {
-        padding-top: 79px;
-    }
 }
 
 
@@ -898,7 +895,6 @@ address {
     left: 0;
     z-index: 999;
 
-    display: none;
 }
 
 .modal {
@@ -913,6 +909,8 @@ address {
     left: 50%;
     z-index: 1000;
     margin-left: -150px;
+
+    display: none;
 }
 
 
@@ -932,23 +930,67 @@ address {
 
     color: #000;
     text-decoration: none;
-    background-color: lighten(@grey, 50%);
-    border-bottom: 1px solid lighten(@grey, 10%);
+    background-color: #eee;
+    border-bottom: 1px solid darken( #eee, 10%);
 
     &:hover {
-        background-color: lighten(@grey, 45%);
+        background-color: darken( #eee, 5%);
     }
 }
 
 .faq-content {
     padding: 5px 10px;
-    font-size: @small;
+    font-size: @small + 2;
     display: none;
 }
 
-.modal.js-modal {
+
+
+
+/* 16. Popup
+===========================*/
+
+.popup {
+    width: 150px;
+    padding: 5px;
+    background-color: @black;
+    border-radius: 3px;
+
+    color: @white;
+    font-size: @small;
+
+    position: absolute;
+    left: 50%;
+    top: 120%;
+    z-index: 1;
+    margin-left: -75px;
+
     display: none;
+
+    &:before {
+        content: "";
+        border-style: solid;
+        border-width: 0 5px 4px 5px;
+        border-color: transparent transparent @black transparent;
+
+        position: absolute;
+        top: -3px;
+        left: 50%;
+        z-index: 1;
+        margin-left: -3px;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
