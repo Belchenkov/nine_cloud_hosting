@@ -13,7 +13,6 @@ $(function() {
     // Fixed Header when Scroll
     var headerH = $('#js-header').height();
     var navH = $('#js-nav-container').innerHeight();
-    console.log(navH);
 
     $(document).on('scroll', function () {
         var documentScroll = $(this).scrollTop();
@@ -27,6 +26,18 @@ $(function() {
             $('#js-nav-container').removeClass('fixed');
             $('#js-header').removeAttr('style');
         }
+    });
+
+    // Scroll Item Menu To Page Blocks
+    $('#js-nav a').on('click', function (e) {
+        e.preventDefault();
+
+       var currentBlock = $(this).attr('href');
+       var currentOffset = $(currentBlock).offset().top;
+
+        $('html, body').animate({
+            scrollTop: currentOffset - 20
+        }, 700);
     });
 
 });
