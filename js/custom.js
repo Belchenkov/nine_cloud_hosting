@@ -155,4 +155,12 @@ $(function() {
     // HTML5 Placeholder jQuery Plugin
     // https://github.com/mathiasbynens/jquery-placeholder
     $('input, textarea').placeholder();
+
+
+    // Counter-Up is a jQuery plugin that animates a number from zero
+    // https://github.com/bfintal/Counter-Up
+    $('.counter').counterUp({
+        delay: 5,
+        time: 500
+    });
 });
