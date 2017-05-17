@@ -137,4 +137,18 @@ $(function() {
         ]
     });
 
+    // WOW.js https://github.com/matthieua/WOW
+    //http://mynameismatthieu.com/WOW/docs.html
+    //https://daneden.github.io/animate.css/
+    wow = new WOW(
+        {
+            boxClass:     'wow',      // default
+            animateClass: 'animated', // default
+            offset:       180,          // default
+            mobile:       false,       // default
+            live:         true        // default
+        }
+    );
+    wow.init();// initialize
+
 });

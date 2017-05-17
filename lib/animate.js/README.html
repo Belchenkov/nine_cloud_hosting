@@ -1,0 +1,36 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>README.md</title>
+      </head>
+      <body>
+        <h1 id="animate-js">animate.js</h1>
+<p>Simple animation function - lightweight replacement for jQuery.animate and Velocity.js with pluggable easing functions.</p>
+<p>Example:</p>
+<pre><code class="lang-javascript">import { easeInQuad } from &#39;./easings.js&#39;;
+
+//run a factory function and provide an easing functions
+const animate = initAnimate(easeInQuad);
+
+let duration = 1000;
+let from = 100;
+let to = 300;
+
+//runs on each frame with a value as per easing function
+let animFunc = function(value) {
+  element.style.left = value + &#39;px&#39;;
+}
+
+//callback runs at the end of animation
+let callback = function(value) {
+  console.log(&#39;callback runs and gets:&#39;, value);
+}
+
+//runs the animation
+animate(duration, from, to, animFunc, callback);
+</code></pre>
+<p>Run initAnimate(easing) factory function and provide one of the easing functions (from easing.js file) based on Penner&#39;s equations.</p>
+<p>The factory function returns an animation function that changes value &quot;from&quot; given value, &quot;to&quot; given value over provided &quot;duration&quot; according to the chosen easing. On each frame it will run a function giving to it a value. When finished, it will run a callback. </p>
+
+      </body>
+    </html>
