@@ -151,4 +151,8 @@ $(function() {
     );
     wow.init();// initialize
 
+
+    // HTML5 Placeholder jQuery Plugin
+    // https://github.com/mathiasbynens/jquery-placeholder
+    $('input, textarea').placeholder();
 });
