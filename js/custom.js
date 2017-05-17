@@ -160,7 +160,7 @@ $(function() {
     // Counter-Up is a jQuery plugin that animates a number from zero
     // https://github.com/bfintal/Counter-Up
     $('.counter').counterUp({
-        delay: 5,
-        time: 500
+        delay: 25,
+        time: 3500
     });
 });
