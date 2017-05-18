@@ -700,10 +700,27 @@ img {
 ===========================*/
 
 .map {
+    position: relative;
     background: url("@{i}map.jpg") no-repeat;
     background-size: cover;
     height: 548px;
     padding-top: 100px;
+}
+
+.contacts-info {
+    position: relative;
+    padding-top: 100px;
+    z-index: 2;
+
+}
+
+.contacts-map {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
 .address-title {
