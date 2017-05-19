@@ -41,7 +41,7 @@ $(function() {
     });
 
     // Show Modal Window
-    $('.js-show-modal').on('click', function (e) {
+   /* $('.js-show-modal').on('click', function (e) {
         e.preventDefault();
         var currentModal = $(this).attr('href');
         $('body').append('<div class="overlay" id="js-overlay"></div>').addClass('open-modal');
@@ -53,7 +53,7 @@ $(function() {
             $(currentModal).fadeOut(500);
             $('#js-overlay').remove();
         });
-    });
+    });*/
 
     /*// FAQ Accordion #1
     $(".js-faq-title").on("click", function(e) {
@@ -163,4 +163,23 @@ $(function() {
         delay: 25,
         time: 3500
     });
+
 });
+
+    // Typed.js | Allow write text into Page
+    // https://github.com/mattboldt/typed.js
+    document.addEventListener("DOMContentLoaded", function(){
+        Typed.new(".js-typed", {
+            strings: ["Strength in equality.The power of dreams", "BUILD YOUR WEBSITE", "MADE WITH LOVE"],
+            // typing speed
+            typeSpeed: 0,
+            showCursor: true,
+            // time before typing starts
+            startDelay: 1500,
+            // backspacing speed
+            backDelay: 1500,
+            shuffle: true,
+            // loop
+            loop: true,
+        });
+    });

@@ -181,6 +181,7 @@ img {
 }
 
 .title {
+    min-height: 56px;
     font-family: @second_family;
     font-size: @title;
     font-weight: 100;
@@ -1003,6 +1004,35 @@ img {
 }
 
 
+/* === Typed.js === */
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 1s infinite;
+    -moz-animation: blink 1s infinite;
+    animation: blink 1s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+.typed-fade-out{
+    opacity: 0;
+    animation: 0;
+    transition: opacity .25s;
+}
+/* === Typed.js === */
 
 
 /*=== Import lib styles === */
